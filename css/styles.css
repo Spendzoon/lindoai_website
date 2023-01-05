@@ -555,7 +555,6 @@ a {
 }
 
 .nav {
-  position: fixed;
   z-index: 100;
   display: -webkit-box;
   display: -webkit-flex;
@@ -823,7 +822,13 @@ a {
   -webkit-text-fill-color: transparent;  
 }
 
-
+.lindo-badge{
+position: fixed;
+z-index: 100;
+bottom: 20px;
+left: 20px;
+width: 160px;  
+}
 
 @media screen and (max-width: 767px) {
   .row.mt-xl.v-l {
