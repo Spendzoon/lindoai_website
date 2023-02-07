@@ -1,8 +1,4 @@
-:root {
-  --accent: #7F25FB;
-  --secondary: #21C1FC;
-  --Triteria: #FC1263;
-}
+@import "brand.css";
 
 body {
   font-family: 'Lexend', sans-serif;
