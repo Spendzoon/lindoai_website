@@ -209,6 +209,8 @@ function makeEditable(){
 
 
 $("#_cta_btn_header_text").editable({
+    content:"a",
+    autoselect:true,
     save: function(e, ui) {
       jsonData["_cta_btn_header_text"]= ui.content;
     }
@@ -227,6 +229,8 @@ $("#_cta_btn_header_text").editable({
   });
   
   $("#_cta_btn_hero_text").editable({
+    content:"a",
+    autoselect:true,
     save: function(e, ui) {
       jsonData["_cta_btn_hero_text"]= ui.content;
     }
