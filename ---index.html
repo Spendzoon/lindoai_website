@@ -179,8 +179,11 @@
   <script>
     window.addEventListener("message", receiveMessage, false);
     
+    console.log('khoond');
+
     function receiveMessage(event) {
       if (event.origin !== "https://app.lindoai.com/") return;
+      console.log('kar kard');
       var data = event.data;
       console.log(data.data);
     }
