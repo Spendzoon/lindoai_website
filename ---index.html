@@ -176,14 +176,9 @@
   <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
   <script src="js/jquery-contenteditable.min.js"></script>
-  <script>
 
-    </script>
-    
   
 <script>
-function makeEditable(){
-
   var jsonData = {};
   jsonData["_cta_btn_header_text"] = $('#_cta_btn_header_text').text();
   jsonData["_hero_title"] = $('#_hero_title').text();
@@ -205,8 +200,8 @@ function makeEditable(){
   jsonData["_cta_btn_benner_text"] = $('#_cta_btn_benner_text').text();
   jsonData["_cta_btn_benner_subtitle"] = $('#_cta_btn_benner_subtitle').text();
   jsonData["_copyright_text"] = $('#_copyright_text').text();
-  jsonData["_made_text"] = $('#_made_text').text();
-
+  jsonData["_made_text"] = $('#_made_text').text();  
+function makeEditable(){
 
 $("#_cta_btn_header_text").editable({
     content:"a",
@@ -363,6 +358,10 @@ function receiveMessage(event) {
 
 
 $(document).ready(function() {
+  // only in dev mode otherwise comment this
+  makeEditable();
+  $('#edit-panel').css('display', 'block')
+  // end of dev mode
 
     console.log(jsonData);
 
