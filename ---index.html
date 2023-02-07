@@ -179,8 +179,11 @@
   <script>
     </script>
 <script>
+        console.log('hey');
+
     $(window).on("message", function(event) {
       if (event.originalEvent.origin !== "https://app.lindoai.com/landing/editor/beta") {
+        console.log('no no no');
         return;
       }
       var data = event.originalEvent.data;
