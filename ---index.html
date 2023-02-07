@@ -177,6 +177,15 @@
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
   <script src="js/jquery-contenteditable.min.js"></script>
   <script>
+    </script>
+<script>
+    $(window).on("message", function(event) {
+      if (event.originalEvent.origin !== "https://app.lindoai.com/landing/editor/beta") {
+        return;
+      }
+      var data = event.originalEvent.data;
+      console.log('iframe: ' + data.data);
+    });
 
 $(document).ready(function() {
 
