@@ -344,7 +344,7 @@ a {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  border-radius: 50px;
+  border-radius: .5rem;
   background-color: #edf2ff;
   color: var(--accent);
   font-weight: 600;
@@ -372,7 +372,6 @@ a {
 
 .button.xl {
   padding: 32px 64px;
-  border-radius: 50px;
   font-size: 20px;
 }
 
