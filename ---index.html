@@ -44,21 +44,42 @@
   </style>
 </head>
 
-<body class="">
+<body class="editor-active">
+  <div class="sidebar left">
+    <!-- HEADER -->
+    <div class="sidebar-header">
+      <div class="title">
+        <h3>Page settings</h3>
+      </div>
+      <div class="action">
+        <span class="close-sidebar" href=""><i class="fa-solid fa-xmark"></i></span>
+      </div>
+    </div>
+    <!-- ITEMS -->
+    <div class="input-label">
+      <h5>Page Name</h5>
+      <input type="text" placeholder="E.g. Hubspot | Tools for your business " value="Lindo | Marketing Ai Assitant">
+    </div>
+    <div class="input-label">
+      <h5>Page URL</h5>
+      <input type="text" placeholder="E.g. /trynow" value="/trynow">
+    </div>
+</div>  
   <div id="editor-panel" class="editor-panel">
     <div class="editor-settings">
-      <div class="input-label">
+      <span class="action open-settings"><i class="fa-solid fa-gear"></i></span>
+      <!-- <div class="input-label">
         <span><i class="fa-solid fa-font"></i> Page Name</span>
         <input type="text" placeholder="E.g. Hubspot | Tools for your business " value="Lindo | Marketing Ai Assitant">
       </div>
       <div class="input-label">
         <span><i class="fa-solid fa-link"></i> Page URL</span>
         <input type="text" placeholder="E.g. /trynow" value="/trynow">
-      </div>
+      </div> -->
   </div>
     <div class="editor-actions">
       <button id="save_changes" class="shave_changes">Save & Publish</button>
-      <span class="save-btn-message">Everything is updated!</span>
+      <!-- <span class="save-btn-message">Everything is updated!</span> -->
     </div>
   </div>
   <header class="nav">
@@ -223,7 +244,7 @@
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
   <script src="js/jquery-contenteditable.min.js"></script>
   <script src="https://kit.fontawesome.com/2ac67565a3.js" crossorigin="anonymous"></script>
-
+  <script src="js/jquery.sidebar.min.js"></script>
 
 <style>
   .editor-active .edit-link-area{
@@ -280,8 +301,8 @@
     outline: none;
   }
   .editor-active div#editor-panel {
-    background-color: #ebf0f5!important;
-    padding: 20px 50px;
+    background-color: #FFF !important;
+    padding: 10px 50px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -311,7 +332,7 @@
     border-radius: .5rem;
     font-size: .9rem;
     padding: 10px;
-    width: 300px;
+    width: 100%;
   }
   .editor-active .editor-actions{
     display: flex;
@@ -321,8 +342,8 @@
   }
 
   .editor-active .editor-actions button#save_changes {
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 5px 15px;
+    font-size: .8rem;
     border-radius: .5rem;
     color: #FFF;
     background-color: #131313;
@@ -371,10 +392,67 @@
     display: flex;
   }
   .editor-active .nav {
-    padding-top: 120px;
+    padding-top: 56px;
+  }
+  .sidebar.left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    z-index: 200;
+    background: #ebf0f5;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .sidebar h3, sidebar h4, sidebar h5, sidebar h6 {
+    margin: 0;
+  }
+  .sidebar-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d3dce4;
+  }
+  .sidebar-header .action span{
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    color: #131313;
+    font-size: 20px;
+  }
+  .editor-settings .action{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background-color: #131313;
+    color: #FFF;
+    line-height: 32px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: .5rem;
   }
 </style>
 <script>
+
+  // Settings Modal
+  
+  $(".sidebar.left").sidebar({side: "left"});
+  $('.close-sidebar').click(function(){
+    $(".sidebar.left").trigger("sidebar:close");
+  })
+  $('.open-settings').click(function(){
+    $(".sidebar.left").trigger("sidebar:open");
+  })
+  
+  
+
 var jsonData = {};
 jsonData["_cta_btn_header_text"] = $('#_cta_btn_header_text').text();
 jsonData["_hero_title"] = $('#_hero_title').text();
