@@ -45,6 +45,7 @@
 </head>
 
 <body class="">
+  <!-- SIDEBAR SETTINGS -->
   <div class="sidebar left">
     <!-- HEADER -->
     <div class="sidebar-header">
@@ -55,31 +56,24 @@
         <span class="close-sidebar" href=""><i class="fa-solid fa-xmark"></i></span>
       </div>
     </div>
-    <!-- ITEMS -->
+    <!-- ITEM -->
     <div class="input-label">
       <h5>Page Name</h5>
-      <input type="text" placeholder="E.g. Hubspot | Tools for your business " value="Lindo | Marketing Ai Assitant">
+      <input id="_page_name_input" type="text" placeholder="E.g. Hubspot | Tools for your business " value="Lindo | Marketing Ai Assitant">
     </div>
+    <!-- ITEM -->
     <div class="input-label">
       <h5>Page URL</h5>
-      <input type="text" placeholder="E.g. /trynow" value="/trynow">
+      <input id="_page_url_input" type="text" placeholder="E.g. /trynow" value="/trynow">
     </div>
-</div>  
+  </div>  
+  <!-- EDITOR PANEL -->
   <div id="editor-panel" class="editor-panel">
     <div class="editor-settings">
       <span class="action open-settings"><i class="fa-solid fa-gear"></i></span>
-      <!-- <div class="input-label">
-        <span><i class="fa-solid fa-font"></i> Page Name</span>
-        <input type="text" placeholder="E.g. Hubspot | Tools for your business " value="Lindo | Marketing Ai Assitant">
-      </div>
-      <div class="input-label">
-        <span><i class="fa-solid fa-link"></i> Page URL</span>
-        <input type="text" placeholder="E.g. /trynow" value="/trynow">
-      </div> -->
   </div>
     <div class="editor-actions">
       <button id="save_changes" class="shave_changes">Save & Publish</button>
-      <!-- <span class="save-btn-message">Everything is updated!</span> -->
     </div>
   </div>
   <header class="nav">
@@ -105,7 +99,7 @@
     </div>
   </header>
   <div class="section overflow-hidden">
-    <div class="container mt-3xl mb-3xl">
+    <div class="container mt-xl mb-3xl">
       <div class="row">
         <div class="column align-center">
           <h1 id="_hero_title" class="hero-giga text-center max-w-lg text-editable">{_hero_title}</h1>
@@ -116,19 +110,16 @@
             </div>
             <button id="_cta_btn_hero_text" href="{_cta_btn_url}" class="button xl main mt-lg w-button cta-editable" lindo-text><span>{_cta_btn_text}</span></button>
           </div>
-          <div id="_cta_btn_hero_subtutle" class="text-sm mt-md muted text-editable">{_cta_btn_subtitle}</div>
+          <div id="_cta_btn_hero_subtitle" class="text-sm mt-md muted text-editable">{_cta_btn_subtitle}</div>
         </div>
       </div>
     </div>
   </div>
-
-
+  <!-- LINDO BADGE -->
   <div class="lindo-badge {_hide_badge}">
-    <a href="https://lindoai.com">
+    <a target="_blank" href="https://lindoai.com">
       <img src="https://cdn.lindoai.com/lindo-badge.png" alt=""/>
     </a>
-  </div>
-
   </div>
   <div class="section">
     <div class="container mt-2xl mb-2xl">
@@ -144,7 +135,6 @@
     <div class="container">
       <div class="row reverse items-center v-t">
         <div class="column align-left p-2xl">
-          <!-- <h6 id="_feature_eyebrow_1" class="max-w-lg text-editable">{_feature_eyebrow_1}</h6> -->
           <h2 id="_feature_title_1" class="max-w-lg text-editable">{_feature_title_1}</h2>
           <p id="_feature_description_1" class="text-lg text-editable">{_feature_description_1}</p>
         </div>
@@ -157,7 +147,6 @@
       </div>
       <div class="row items-center v-t">
         <div class="column align-left p-2xl">
-          <!-- <h6 id="_feature_eyebrow_2" class="max-w-lg text-editable">{_feature_eyebrow_2}</h6> -->
           <h2 id="_feature_title_2" class="max-w-lg text-editable">{_feature_title_2}</h2>
           <p id="_feature_description_2" class="text-lg text-editable">{_feature_description_2}</p>
         </div>
@@ -170,7 +159,6 @@
       </div>
       <div class="row reverse items-center v-t">
         <div class="column align-left p-2xl">
-          <!-- <h6 id="_feature_eyebrow_3" class="max-w-lg text-editable">{_feature_eyebrow_3}</h6> -->
           <h2 id="_feature_title_3" class="max-w-lg text-editable">{_feature_title_3}</h2>
           <p id="_feature_description_3" class="text-lg text-editable">{_feature_description_3}</p>
         </div>
@@ -187,14 +175,14 @@
     <div class="container mt-2xl mb-2xl">
       <div class="row items-center">
         <div class="column align-center">
-          <h1 id="_cta_title_benner_text" class="max-w-lg text-giga text-center text-white text-editable">{_cta_title}</h1>
+          <h1 id="_cta_title_banner_text" class="max-w-lg text-giga text-center text-white text-editable">{_cta_title}</h1>
           <div class="edit-link-area">
             <div class="edit-url-component" style="display: none;">
               <span>URL: </span><input id="_cta_btn_banner_href" type="text" value="">
             </div>
-            <button id="_cta_btn_benner_text" href="{_cta_btn_url}" class="button xl mt-lg main white w-button cta-editable" ><span>{_cta_btn_text}</span></button>
+            <button id="_cta_btn_banner_text" href="{_cta_btn_url}" class="button xl mt-lg main white w-button cta-editable" ><span>{_cta_btn_text}</span></button>
           </div>
-          <div id="_cta_btn_benner_subtitle" class="faded text-sm mt-md text-editable">{_cta_btn_subtitle}</div>
+          <div id="_cta_btn_banner_subtitle" class="faded text-sm mt-md text-editable">{_cta_btn_subtitle}</div>
         </div>
       </div>
     </div>
@@ -451,28 +439,41 @@
     $(".sidebar.left").trigger("sidebar:open");
   })
   
-  
 
 var jsonData = {};
-jsonData["_cta_btn_header_text"] = $('#_cta_btn_header_text').text();
+// PAGE SETTINGS
+jsonData["_page_name"] = $('#_page_name_input').val();
+jsonData["_page_url"] = $('#_page_url_input').val();
+// IMAGE URLs
+jsonData["_image_feature_1_url"] = $('#image_feature_1').attr('src') ;
+jsonData["_image_feature_2_url"] = $('#image_feature_2').attr('src') ;
+jsonData["_image_feature_3_url"] = $('#image_feature_3').attr('src') ;
+// CTA URL
+jsonData["_cta_btn_header_url"] = $('#_cta_btn_header_text').attr('href') ;
+jsonData["_cta_btn_hero_url"] = $('#_cta_btn_hero_text').attr('href') ;
+jsonData["_cta_btn_banner_url"] = $('#_cta_btn_banner_text').attr('href') ;
+// CTA BTN TEXTS
+jsonData["_cta_btn_header_text"] = $('#_cta_btn_header_text').find('span').text();
+jsonData["_cta_btn_hero_text"] = $('#_cta_btn_hero_text').find('span').text();
+jsonData["_cta_btn_banner_text"] = $('#_cta_btn_banner_text').find('span').text();
+// CTA EXTRA TEXTS
+jsonData["_cta_btn_hero_subtitle"] = $('#_cta_btn_hero_subtitle').text();
+jsonData["_cta_title_banner_text"] = $('#_cta_title_banner_text').text();
+jsonData["_cta_btn_banner_subtitle"] = $('#_cta_btn_banner_subtitle').text();
+// HERO TEXTS
 jsonData["_hero_title"] = $('#_hero_title').text();
 jsonData["_hero_subtitle"] = $('#_hero_subtitle').text();
-jsonData["_cta_btn_hero_text"] = $('#_cta_btn_hero_text').text();
-jsonData["_cta_btn_hero_subtutle"] = $('#_cta_btn_hero_subtutle').text();
+// PRODUCT DESC TEXTS
 jsonData["_product_description_title"] = $('#_product_description_title').text();
 jsonData["_product_description_subtitle"] = $('#_product_description_subtitle').text();
-jsonData["_feature_eyebrow_1"] = $('#_feature_eyebrow_1').text();
+// PRODUCT FEATURES TEXTS
 jsonData["_feature_title_1"] = $('#_feature_title_1').text();
 jsonData["_feature_description_1"] = $('#_feature_description_1').text();
-jsonData["_feature_eyebrow_2"] = $('#_feature_eyebrow_2').text();
 jsonData["_feature_title_2"] = $('#_feature_title_2').text();
 jsonData["_feature_description_2"] = $('#_feature_description_2').text();
-jsonData["_feature_eyebrow_3"] = $('#_feature_eyebrow_3').text();
 jsonData["_feature_title_3"] = $('#_feature_title_3').text();
 jsonData["_feature_description_3"] = $('#_feature_description_3').text();
-jsonData["_cta_title_benner_text"] = $('#_cta_title_benner_text').text();
-jsonData["_cta_btn_benner_text"] = $('#_cta_btn_benner_text').text();
-jsonData["_cta_btn_benner_subtitle"] = $('#_cta_btn_benner_subtitle').text();
+// FOOTER TEXTS
 jsonData["_copyright_text"] = $('#_copyright_text').text();
 jsonData["_made_text"] = $('#_made_text').text();  
 
@@ -502,20 +503,20 @@ function btnEditable(){
 
 
   //href edit #banner
-  $("#_cta_btn_benner_text").click(function() {
+  $("#_cta_btn_banner_text").click(function() {
     var href = $(this).attr("href");
     $(this).siblings(".edit-url-component").find("input").val(href);
     $(this).siblings(".edit-url-component").show();
   });
   $("#_cta_btn_banner_href").on("input", function() {
     var newHref = $(this).val();
-    $(this).parent().siblings("#_cta_btn_benner_text").attr("href", newHref);
+    $(this).parent().siblings("#_cta_btn_banner_text").attr("href", newHref);
   });
 
 
 }
 $(document).click(function(event) {
-  if (!$(event.target).closest("#_cta_btn_header_text, #_cta_btn_hero_text, #_cta_btn_benner_text, .edit-url-component").length) {
+  if (!$(event.target).closest("#_cta_btn_header_text, #_cta_btn_hero_text, #_cta_btn_banner_text, .edit-url-component").length) {
     $(".edit-url-component").hide();
   }
 });
@@ -561,9 +562,9 @@ function makeEditable(){
     }
   });
   
-  $("#_cta_btn_hero_subtutle").editable({
+  $("#_cta_btn_hero_subtitle").editable({
     save: function(e, ui) {
-      jsonData["_cta_btn_hero_subtutle"]= ui.content;
+      jsonData["_cta_btn_hero_subtitle"]= ui.content;
     }
   });
 
@@ -639,25 +640,25 @@ function makeEditable(){
   });
   
   
-  $("#_cta_title_benner_text").editable({
+  $("#_cta_title_banner_text").editable({
     save: function(e, ui) {
-      jsonData["_cta_title_benner_text"]= ui.content;
+      jsonData["_cta_title_banner_text"]= ui.content;
     }
   });
   
   
-  $("#_cta_btn_benner_text").editable({
+  $("#_cta_btn_banner_text").editable({
     content: 'span',
     autoselect:true,
     save: function(e, ui) {
-      jsonData["_cta_btn_benner_text"]= ui.content;
+      jsonData["_cta_btn_banner_text"]= ui.content;
     }
   });
   
   
-  $("#_cta_btn_benner_subtitle").editable({
+  $("#_cta_btn_banner_subtitle").editable({
     save: function(e, ui) {
-      jsonData["_cta_btn_benner_subtitle"]= ui.content;
+      jsonData["_cta_btn_banner_subtitle"]= ui.content;
     }
   });
   
@@ -779,6 +780,15 @@ $("#input_image_feature_3").change(function() {
             // $('#data-loading').css('display', 'none');
         }
     });
+});
+
+//
+
+$("#_page_name_input").on("change", function() {
+  jsonData["_page_name"] = $(this).val();
+});
+$("#_page_url_input").on("change", function() {
+  jsonData["_page_url"] = $(this).val();
 });
 
 $(document).ready(function() {
