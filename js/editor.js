@@ -230,10 +230,15 @@ function receiveMessage(event) {
   makeEditable();
   btnEditable();
   $('body').addClass('editor-active');
-  $('.sidebar.left').css('display','flex')
+  $('.sidebar.left').css('display','flex');
+  $("[id^='_cta_btn_']").off("click");
 }
 
 //
+
+$("[id^='_cta_btn_']").click(function(){
+  window.location.href = $(this).attr('href');
+});
 
 function setImageFeature1($image_feature_1_url) {
     $('#image_feature_1').attr('src', $image_feature_1_url);
