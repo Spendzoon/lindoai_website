@@ -337,10 +337,10 @@ $("#_page_url_input").on("change", function() {
 
 $(document).ready(function() {
   // only in dev mode otherwise comment this
-  makeEditable();
-  btnEditable();
-  $('body').addClass('editor-active');
-  $('.sidebar.left').css('display','flex');
+  // makeEditable();
+  // btnEditable();
+  // $('body').addClass('editor-active');
+  // $('.sidebar.left').css('display','flex');
   // $('#editor-panel').css('display', 'flex')
   // end of dev mode
 
