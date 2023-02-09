@@ -12,6 +12,7 @@
 
 var jsonData = {};
 // PAGE SETTINGS
+jsonData["business_id"] ='';
 jsonData["_page_name"] = $('#_page_name_input').val();
 jsonData["_page_url"] = $('#_page_url_input').val();
 // IMAGE URLs
@@ -255,6 +256,7 @@ function receiveMessage(event) {
   // if (event.origin !== "https://app.lindoai.com/landing/editor/beta") return;
   var data = event.data;
   $softr_token = data.data;
+  jsonData["business_id"] = data.business_id;
   makeEditable();
   btnEditable();
   $('body').addClass('editor-active');
