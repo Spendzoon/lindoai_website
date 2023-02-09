@@ -4,7 +4,9 @@ var gtmBodyScript = '<!-- Google Tag Manager -->'+ '\n' + '<noscript><iframe src
 
 // var jsonConfig = {}
 // jsonConfig["_gtm_header"] = ""
-
+$(function(){
+    $("#editor-placeholder").load("../blocks/editor.html"); 
+});
 $(document).ready(function() {
     // $( "head" ).append( gtmHeaderScript );
     // $( "body" ).prepend( gtmBodyScript );

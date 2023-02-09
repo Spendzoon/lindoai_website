@@ -1,19 +1,10 @@
 
-  // Settings Modal
-  
-  $(".sidebar.left").sidebar({side: "left"});
-  $('.close-sidebar').click(function(){
-    $(".sidebar.left").trigger("sidebar:close");
-  })
-  $('.open-settings').click(function(){
-    $(".sidebar.left").trigger("sidebar:open");
-  })
   var jsonData = {
     "business_id": "",
     "template": "launch",
-    "path": $('#_page_url_input').val(),
+    "path": "",
     "data": {
-      "_page_name" : $('#_page_name_input').val(),
+      "_page_name" : $('head').find('title').text(),
       "_image_feature_1_url" : $('#image_feature_1').attr('src'),
       "_image_feature_2_url" : $('#image_feature_2').attr('src'),
       "_image_feature_3_url" : $('#image_feature_3').attr('src'),
@@ -227,6 +218,7 @@ function receiveMessage(event) {
   var data = event.data;
   $softr_token = data.data;
   jsonData.business_id = data.business_id;
+  jsonData.path = data.business_id;
   makeEditable();
   btnEditable();
   $('body').addClass('editor-active');
@@ -332,38 +324,61 @@ $("#input_image_feature_3").change(function() {
 
 //
 
-$("#_page_name_input").on("change", function() {
-  jsonData.data._page_name = $(this).val();
-});
-$("#_page_url_input").on("change", function() {
-  jsonData.path = $(this).val();
-});
-
 $(document).ready(function() {
   // only in dev mode otherwise comment this
-  // makeEditable();
-  // btnEditable();
-  // $('body').addClass('editor-active');
-  // $('.sidebar.left').css('display','flex');
-  // $('#editor-panel').css('display', 'flex')
+  makeEditable();
+  btnEditable();
+  $('body').addClass('editor-active');
+  $("[id^='_cta_btn_']").off("click");
   // end of dev mode
+  
+  var interval = setInterval(function() {
+    if ($("#editor-html").length) {
+      clearInterval(interval);
 
+      $('.sidebar.left').css('display','flex');
 
-    $("#save_changes").click(function() {
-      console.log(jsonData);
-      $.ajax({
-        type: "POST",
-        url: "",
-        data: JSON.stringify(jsonData),
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        headers: {
-                "softr-token": $softr_token
-            },              
-        success: function(data) {
-          alert("Content saved successfully");
-        }
+      $(".sidebar.left").sidebar({side: "left"});
+      $('.open-settings').click(function(){
+        $(".sidebar.left").trigger("sidebar:open");
+      })
+      $('.close-sidebar').click(function(){
+        $(".sidebar.left").trigger("sidebar:close");
+      })
+
+      $("#_page_name_input").val(jsonData.data._page_name);
+      $("#_page_url_input").val(jsonData.path);
+      
+      $("#_page_name_input").on("change", function() {
+        jsonData.data._page_name = $(this).val();
       });
-    });
+
+      $("#_page_url_input").on("change", function() {
+        jsonData.path = $(this).val();
+      });
+              
+
+      $("#save_changes").click(function() {
+        console.log(jsonData);
+        $.ajax({
+          type: "POST",
+          url: "",
+          data: JSON.stringify(jsonData),
+          contentType: "application/json; charset=utf-8",
+          dataType: "json",
+          headers: {
+                  "softr-token": $softr_token
+              },              
+          success: function(data) {
+            alert("Content saved successfully");
+          }
+        });
+      });
+    }
+  }, 100);
+    
+  
+
+
 
 });
