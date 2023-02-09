@@ -8,7 +8,41 @@
   $('.open-settings').click(function(){
     $(".sidebar.left").trigger("sidebar:open");
   })
-  
+  var jsonData2 = {
+    "business_id": "",
+    "template": "launch",
+    "path": $('#_page_url_input').val(),
+    "data": {
+      "_page_name" : $('#_page_name_input').val(),
+      "_image_feature_1_url" : $('#image_feature_1').attr('src'),
+      "_image_feature_2_url" : $('#image_feature_2').attr('src'),
+      "_image_feature_3_url" : $('#image_feature_3').attr('src'),
+      "_cta_btn_header_url" : $('#_cta_btn_header_text').attr('href'),
+      "_cta_btn_hero_url" : $('#_cta_btn_hero_text').attr('href'),
+      "_cta_btn_banner_url" : $('#_cta_btn_banner_text').attr('href'),
+      "_cta_btn_header_text" : $('#_cta_btn_header_text').find('span').text(),
+      "_cta_btn_hero_text" : $('#_cta_btn_hero_text').find('span').text(),
+      "_cta_btn_banner_text" : $('#_cta_btn_banner_text').find('span').text(),
+      "_cta_btn_hero_subtitle" : $('#_cta_btn_hero_subtitle').text(),
+      "_cta_title_banner_text" : $('#_cta_title_banner_text').text(),
+      "_cta_btn_banner_subtitle" : $('#_cta_btn_banner_subtitle').text(),
+      "_hero_title" : $('#_hero_title').text(),
+      "_hero_subtitle" : $('#_hero_subtitle').text(),
+      "_product_description_title" : $('#_product_description_title').text(),
+      "_product_description_subtitle" : $('#_product_description_subtitle').text(),
+      "_feature_title_1" : $('#_feature_title_1').text(),
+      "_feature_description_1" : $('#_feature_description_1').text(),
+      "_feature_title_2" : $('#_feature_title_2').text(),
+      "_feature_description_2" : $('#_feature_description_2').text(),
+      "_feature_title_3" : $('#_feature_title_3').text(),
+      "_feature_description_3" : $('#_feature_description_3').text(),
+      "_copyright_text" : $('#_copyright_text').text(),
+      "_made_text" : $('#_made_text').text(),  
+      
+    }
+  };
+
+  console.log(jsonData2);
 
 var jsonData = {};
 // PAGE SETTINGS
@@ -101,7 +135,7 @@ function makeEditable(){
 
   $("#_test").editable({
     save: function(e, ui) {
-      jsonData["_hero_title"]= ui.content;
+      jsonData2.data._cta_btn_hero_subtitle= ui.content;
     }
   });
  
@@ -109,19 +143,19 @@ function makeEditable(){
     content: 'span',
     autoselect:true,
     save: function(e, ui) {
-      jsonData["_cta_btn_header_text"]= ui.content;
+      jsonData2.data._cta_btn_header_text_cta_btn_hero_subtitle= ui.content;
     }
   });
   
   $("#_hero_title").editable({
     save: function(e, ui) {
-      jsonData["_hero_title"]= ui.content;
+      jsonData2.data._cta_btn_hero_subtitle= ui.content;
     }
   });
   
   $("#_hero_subtitle").editable({
     save: function(e, ui) {
-      jsonData["_hero_subtitle"]= ui.content;
+      jsonData2.data._hero_subtitle_cta_btn_hero_subtitle= ui.content;
     }
   });
   
@@ -129,91 +163,91 @@ function makeEditable(){
     content: 'span',
     autoselect:true,
     save: function(e, ui) {
-      jsonData["_cta_btn_hero_text"]= ui.content;
+      jsonData2.data._cta_btn_hero_text_cta_btn_hero_subtitle= ui.content;
     }
   });
   
   $("#_cta_btn_hero_subtitle").editable({
     save: function(e, ui) {
-      jsonData["_cta_btn_hero_subtitle"]= ui.content;
+      jsonData2.data._cta_btn_hero_subtitle_cta_btn_hero_subtitle= ui.content;
     }
   });
 
   $("#_product_description_title").editable({
     save: function(e, ui) {
-      jsonData["_product_description_title"]= ui.content;
+      jsonData2.data._product_description_title_cta_btn_hero_subtitle= ui.content;
     }
   });
 
 
   $("#_product_description_subtitle").editable({
     save: function(e, ui) {
-      jsonData["_product_description_subtitle"]= ui.content;
+      jsonData2.data._product_description_subtitle_cta_btn_hero_subtitle= ui.content;
     }
   });
 
   $("#_feature_eyebrow_1").editable({
     save: function(e, ui) {
-      jsonData["_feature_eyebrow_1"]= ui.content;
+      jsonData2.data._feature_eyebrow_1_cta_btn_hero_subtitle= ui.content;
     }
   });
 
 
   $("#_feature_title_1").editable({
     save: function(e, ui) {
-      jsonData["_feature_title_1"]= ui.content;
+      jsonData2.data._feature_title_1_cta_btn_hero_subtitle= ui.content;
     }
   });
 
   $("#_feature_description_1").editable({
     save: function(e, ui) {
-      jsonData["_feature_description_1"]= ui.content;
+      jsonData2.data._feature_description_1_cta_btn_hero_subtitle= ui.content;
     }
   });
 
   $("#_feature_eyebrow_2").editable({
     save: function(e, ui) {
-      jsonData["_feature_eyebrow_2"]= ui.content;
+      jsonData2.data._feature_eyebrow_2_cta_btn_hero_subtitle= ui.content;
     }
   });
   $("#_feature_title_2").editable({
     save: function(e, ui) {
-      jsonData["_feature_title_2"]= ui.content;
+      jsonData2.data._feature_title_2_cta_btn_hero_subtitle= ui.content;
     }
   });
   
   
   $("#_feature_description_2").editable({
     save: function(e, ui) {
-      jsonData["_feature_description_2"]= ui.content;
+      jsonData2.data._feature_description_2_cta_btn_hero_subtitle= ui.content;
     }
   });
   
   
   $("#_feature_eyebrow_3").editable({
     save: function(e, ui) {
-      jsonData["_feature_eyebrow_3"]= ui.content;
+      jsonData2.data._feature_eyebrow_3_cta_btn_hero_subtitle= ui.content;
     }
   });
   
   
   $("#_feature_title_3").editable({
     save: function(e, ui) {
-      jsonData["_feature_title_3"]= ui.content;
+      jsonData2.data._feature_title_3_cta_btn_hero_subtitle= ui.content;
     }
   });
   
   
   $("#_feature_description_3").editable({
     save: function(e, ui) {
-      jsonData["_feature_description_3"]= ui.content;
+      jsonData2.data._feature_description_3_cta_btn_hero_subtitle= ui.content;
     }
   });
   
   
   $("#_cta_title_banner_text").editable({
     save: function(e, ui) {
-      jsonData["_cta_title_banner_text"]= ui.content;
+      jsonData2.data._cta_title_banner_text_cta_btn_hero_subtitle= ui.content;
     }
   });
   
@@ -222,28 +256,28 @@ function makeEditable(){
     content: 'span',
     autoselect:true,
     save: function(e, ui) {
-      jsonData["_cta_btn_banner_text"]= ui.content;
+      jsonData2.data._cta_btn_banner_text_cta_btn_hero_subtitle= ui.content;
     }
   });
   
   
   $("#_cta_btn_banner_subtitle").editable({
     save: function(e, ui) {
-      jsonData["_cta_btn_banner_subtitle"]= ui.content;
+      jsonData2.data._cta_btn_banner_subtitle_cta_btn_hero_subtitle= ui.content;
     }
   });
   
   
   $("#_copyright_text").editable({
     save: function(e, ui) {
-      jsonData["_copyright_text"]= ui.content;
+      jsonData2.data._copyright_text_cta_btn_hero_subtitle= ui.content;
     }
   });
   
   
   $("#_made_text").editable({
     save: function(e, ui) {
-      jsonData["_made_text"]= ui.content;
+      jsonData2.data._made_text_cta_btn_hero_subtitle= ui.content;
     }
   });  
 }
@@ -256,7 +290,7 @@ function receiveMessage(event) {
   // if (event.origin !== "https://app.lindoai.com/landing/editor/beta") return;
   var data = event.data;
   $softr_token = data.data;
-  jsonData["business_id"] = data.business_id;
+  jsonData2.business_id = data.business_id;
   makeEditable();
   btnEditable();
   $('body').addClass('editor-active');
@@ -357,10 +391,10 @@ $("#input_image_feature_3").change(function() {
 //
 
 $("#_page_name_input").on("change", function() {
-  jsonData["_page_name"] = $(this).val();
+  jsonData2.data._page_name_cta_btn_hero_subtitle = $(this).val();
 });
 $("#_page_url_input").on("change", function() {
-  jsonData["_page_url"] = $(this).val();
+  jsonData2.data._page_url_cta_btn_hero_subtitle = $(this).val();
 });
 
 $(document).ready(function() {
