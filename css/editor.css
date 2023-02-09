@@ -33,7 +33,7 @@
     border: 5px solid transparent;
   }
   .editor-active .text-editable{
-    background-color: #fffbf2;
+    background-color: rgb(255 244 218 / 30%);
     border: 10px solid transparent;
     border-radius: .5rem;
   }
@@ -152,7 +152,7 @@
     bottom: 0;
     width: 400px;
     z-index: 200;
-    background: #ebf0f5;
+    background: #1f1c23;
     padding: 20px;
     display: flex;
     flex-direction: column;

@@ -89,7 +89,6 @@ $(document).click(function(event) {
   }
 });
 
-
 // $("a").click(function(event) {
 //     event.preventDefault();
 //   });
@@ -103,19 +102,19 @@ function makeEditable(){
       jsonData.data._cta_btn_header_text= ui.content;
     }
   });
-  
+
   $("#_hero_title").editable({
     save: function(e, ui) {
       jsonData.data._hero_title= ui.content;
     }
   });
-  
+
   $("#_hero_subtitle").editable({
     save: function(e, ui) {
       jsonData.data._hero_subtitle= ui.content;
     }
   });
-  
+
   $("#_cta_btn_hero_text").editable({
     content: 'span',
     autoselect:true,
