@@ -42,46 +42,6 @@
     }
   };
 
-  console.log(jsonData2);
-
-var jsonData = {};
-// PAGE SETTINGS
-jsonData["business_id"] ='';
-jsonData["_page_name"] = $('#_page_name_input').val();
-jsonData["_page_url"] = $('#_page_url_input').val();
-// IMAGE URLs
-jsonData["_image_feature_1_url"] = $('#image_feature_1').attr('src') ;
-jsonData["_image_feature_2_url"] = $('#image_feature_2').attr('src') ;
-jsonData["_image_feature_3_url"] = $('#image_feature_3').attr('src') ;
-// CTA URL
-jsonData["_cta_btn_header_url"] = $('#_cta_btn_header_text').attr('href') ;
-jsonData["_cta_btn_hero_url"] = $('#_cta_btn_hero_text').attr('href') ;
-jsonData["_cta_btn_banner_url"] = $('#_cta_btn_banner_text').attr('href') ;
-// CTA BTN TEXTS
-jsonData["_cta_btn_header_text"] = $('#_cta_btn_header_text').find('span').text();
-jsonData["_cta_btn_hero_text"] = $('#_cta_btn_hero_text').find('span').text();
-jsonData["_cta_btn_banner_text"] = $('#_cta_btn_banner_text').find('span').text();
-// CTA EXTRA TEXTS
-jsonData["_cta_btn_hero_subtitle"] = $('#_cta_btn_hero_subtitle').text();
-jsonData["_cta_title_banner_text"] = $('#_cta_title_banner_text').text();
-jsonData["_cta_btn_banner_subtitle"] = $('#_cta_btn_banner_subtitle').text();
-// HERO TEXTS
-jsonData["_hero_title"] = $('#_hero_title').text();
-jsonData["_hero_subtitle"] = $('#_hero_subtitle').text();
-// PRODUCT DESC TEXTS
-jsonData["_product_description_title"] = $('#_product_description_title').text();
-jsonData["_product_description_subtitle"] = $('#_product_description_subtitle').text();
-// PRODUCT FEATURES TEXTS
-jsonData["_feature_title_1"] = $('#_feature_title_1').text();
-jsonData["_feature_description_1"] = $('#_feature_description_1').text();
-jsonData["_feature_title_2"] = $('#_feature_title_2').text();
-jsonData["_feature_description_2"] = $('#_feature_description_2').text();
-jsonData["_feature_title_3"] = $('#_feature_title_3').text();
-jsonData["_feature_description_3"] = $('#_feature_description_3').text();
-// FOOTER TEXTS
-jsonData["_copyright_text"] = $('#_copyright_text').text();
-jsonData["_made_text"] = $('#_made_text').text();  
-
 
 function btnEditable(){
   //href edit #header
@@ -391,10 +351,10 @@ $("#input_image_feature_3").change(function() {
 //
 
 $("#_page_name_input").on("change", function() {
-  jsonData2.data._page_name_cta_btn_hero_subtitle = $(this).val();
+  jsonData2.data._page_name = $(this).val();
 });
 $("#_page_url_input").on("change", function() {
-  jsonData2.data._page_url_cta_btn_hero_subtitle = $(this).val();
+  jsonData2.path = $(this).val();
 });
 
 $(document).ready(function() {
@@ -405,14 +365,12 @@ $(document).ready(function() {
   // $('#editor-panel').css('display', 'flex')
   // end of dev mode
 
-    console.log(jsonData);
 
     $("#save_changes").click(function() {
-      console.log(jsonData);
       $.ajax({
         type: "POST",
         url: "",
-        data: JSON.stringify(jsonData),
+        data: JSON.stringify(jsonData2),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         headers: {
