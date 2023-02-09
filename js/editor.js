@@ -326,10 +326,10 @@ $("#input_image_feature_3").change(function() {
 
 $(document).ready(function() {
   // only in dev mode otherwise comment this
-  makeEditable();
-  btnEditable();
-  $('body').addClass('editor-active');
-  $("[id^='_cta_btn_']").off("click");
+  // makeEditable();
+  // btnEditable();
+  // $('body').addClass('editor-active');
+  // $("[id^='_cta_btn_']").off("click");
   // end of dev mode
   
   var interval = setInterval(function() {
