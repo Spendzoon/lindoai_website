@@ -33,7 +33,7 @@
     border: 5px solid transparent;
   }
   .editor-active .text-editable{
-    background-color: transparent;
+    background-color: #fffbf2;
     border: 10px solid transparent;
     border-radius: .5rem;
   }
