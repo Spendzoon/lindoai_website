@@ -1,3 +1,6 @@
+  $(function(){
+    $("#editor-placeholder").load("blocks/editor.html"); 
+  });
 
   var jsonData = {
     "business_id": "",
@@ -32,8 +35,6 @@
       
     }
   };
-
-
 function btnEditable(){
   //href edit #header
   $("#_cta_btn_header_text").click(function() {
@@ -86,127 +87,144 @@ $(document).click(function(event) {
 
 function makeEditable(){
 
-  $("#_cta_btn_header_text").editable({
+  $(".text-editable").editable({
+    save: function(e, ui) {
+      jsonData.data[$(this).attr('id')]= ui.content;
+    }
+  });
+  $(".text-editable").on("paste", function(event) {
+    event.preventDefault();
+    let text = (event.originalEvent || event).clipboardData.getData('text/plain');
+    document.execCommand("insertHTML", false, text);
+  });
+
+  $(".cta-editable").editable({
     content: 'span',
     autoselect:true,
     save: function(e, ui) {
-      jsonData.data._cta_btn_header_text= ui.content;
+      jsonData.data[$(this).attr('id')]= ui.content;
     }
+  });
+  $(".cta-editable").on("paste", function(event) {
+    event.preventDefault();
+    let text = (event.originalEvent || event).clipboardData.getData('text/plain');
+    document.execCommand("insertHTML", false, text);
   });
 
-  $("#_hero_title").editable({
-    save: function(e, ui) {
-      jsonData.data._hero_title= ui.content;
-    }
-  });
+  // $("#_hero_title").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._hero_title= ui.content;
+  //     console.log($(this).attr('id'))
+  //   }
+  // });
 
-  $("#_hero_subtitle").editable({
-    save: function(e, ui) {
-      jsonData.data._hero_subtitle= ui.content;
-    }
-  });
+  // $("#_hero_subtitle").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._hero_subtitle= ui.content;
+  //   }
+  // });
 
-  $("#_cta_btn_hero_text").editable({
-    content: 'span',
-    autoselect:true,
-    save: function(e, ui) {
-      jsonData.data._cta_btn_hero_text= ui.content;
-    }
-  });
+  // $("#_cta_btn_hero_text").editable({
+  //   content: 'span',
+  //   autoselect:true,
+  //   save: function(e, ui) {
+  //     jsonData.data._cta_btn_hero_text= ui.content;
+  //   }
+  // });
   
-  $("#_cta_btn_hero_subtitle").editable({
-    save: function(e, ui) {
-      jsonData.data._cta_btn_hero_subtitle= ui.content;
-    }
-  });
+  // $("#_cta_btn_hero_subtitle").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._cta_btn_hero_subtitle= ui.content;
+  //   }
+  // });
 
-  $("#_product_description_title").editable({
-    save: function(e, ui) {
-      jsonData.data._product_description_title= ui.content;
-    }
-  });
+  // $("#_product_description_title").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._product_description_title= ui.content;
+  //   }
+  // });
 
 
-  $("#_product_description_subtitle").editable({
-    save: function(e, ui) {
-      jsonData.data._product_description_subtitle= ui.content;
-    }
-  });
+  // $("#_product_description_subtitle").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._product_description_subtitle= ui.content;
+  //   }
+  // });
 
-  $("#_feature_title_1").editable({
-    save: function(e, ui) {
-      jsonData.data._feature_title_1= ui.content;
-    }
-  });
+  // $("#_feature_title_1").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._feature_title_1= ui.content;
+  //   }
+  // });
 
-  $("#_feature_description_1").editable({
-    save: function(e, ui) {
-      jsonData.data._feature_description_1= ui.content;
-    }
-  });
+  // $("#_feature_description_1").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._feature_description_1= ui.content;
+  //   }
+  // });
 
-  $("#_feature_title_2").editable({
-    save: function(e, ui) {
-      jsonData.data._feature_title_2= ui.content;
-    }
-  });
+  // $("#_feature_title_2").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._feature_title_2= ui.content;
+  //   }
+  // });
   
   
-  $("#_feature_description_2").editable({
-    save: function(e, ui) {
-      jsonData.data._feature_description_2= ui.content;
-    }
-  });
+  // $("#_feature_description_2").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._feature_description_2= ui.content;
+  //   }
+  // });
   
-  $("#_feature_title_3").editable({
-    save: function(e, ui) {
-      jsonData.data._feature_title_3= ui.content;
-    }
-  });
-  
-  
-  $("#_feature_description_3").editable({
-    save: function(e, ui) {
-      jsonData.data._feature_description_3= ui.content;
-    }
-  });
+  // $("#_feature_title_3").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._feature_title_3= ui.content;
+  //   }
+  // });
   
   
-  $("#_cta_title_banner_text").editable({
-    save: function(e, ui) {
-      jsonData.data._cta_title_banner_text= ui.content;
-    }
-  });
+  // $("#_feature_description_3").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._feature_description_3= ui.content;
+  //   }
+  // });
   
   
-  $("#_cta_btn_banner_text").editable({
-    content: 'span',
-    autoselect:true,
-    save: function(e, ui) {
-      jsonData.data._cta_btn_banner_text= ui.content;
-    }
-  });
+  // $("#_cta_title_banner_text").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._cta_title_banner_text= ui.content;
+  //   }
+  // });
   
   
-  $("#_cta_btn_banner_subtitle").editable({
-    save: function(e, ui) {
-      jsonData.data._cta_btn_banner_subtitle= ui.content;
-    }
-  });
+  // $("#_cta_btn_banner_text").editable({
+  //   content: 'span',
+  //   autoselect:true,
+  //   save: function(e, ui) {
+  //     jsonData.data._cta_btn_banner_text= ui.content;
+  //   }
+  // });
   
   
-  $("#_copyright_text").editable({
-    save: function(e, ui) {
-      jsonData.data._copyright_text= ui.content;
-    }
-  });
+  // $("#_cta_btn_banner_subtitle").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._cta_btn_banner_subtitle= ui.content;
+  //   }
+  // });
   
   
-  $("#_made_text").editable({
-    save: function(e, ui) {
-      jsonData.data._made_text= ui.content;
-    }
-  });  
+  // $("#_copyright_text").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._copyright_text= ui.content;
+  //   }
+  // });
+  
+  
+  // $("#_made_text").editable({
+  //   save: function(e, ui) {
+  //     jsonData.data._made_text= ui.content;
+  //   }
+  // });  
 }
 
 window.addEventListener("message", receiveMessage, false);
