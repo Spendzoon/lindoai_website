@@ -4,8 +4,8 @@ function receiveMessage(event) {
   // if (event.origin !== "https://app.lindoai.com/landing/editor/beta") return;
   var data = event.data;
   $softr_token = data.data;
-  jsonData.business_id = data.business_id;
-  jsonData.path = data.business_id;
+  // jsonData.business_id = data.business_id;
+  // jsonData.path = data.business_id;
   // Init the editor
   $("[id^='_cta_btn_']").off("click");
   makeEditable();
