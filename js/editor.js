@@ -1,7 +1,6 @@
   $(function(){
     $("#editor-placeholder").load("blocks/editor.html"); 
   });
-
   var jsonData = {
     "business_id": "",
     "template": "launch",
@@ -329,28 +328,28 @@ $("#input_image_feature_3").change(function() {
 
 $(document).ready(function() {
 
-  window.addEventListener("message", receiveMessage, false);
+  // window.addEventListener("message", receiveMessage, false);
 
-  var $softr_token;
+  // var $softr_token;
   
-  function receiveMessage(event) {
-    // if (event.origin !== "https://app.lindoai.com/landing/editor/beta") return;
-    var data = event.data;
-    $softr_token = data.data;
-    jsonData.business_id = data.business_id;
-    jsonData.path = data.business_id;
-    makeEditable();
-    btnEditable();
-    $('body').addClass('editor-active');
-    $('.sidebar.left').css('display','flex');
-    $("[id^='_cta_btn_']").off("click");
-  }
+  // function receiveMessage(event) {
+  //   // if (event.origin !== "https://app.lindoai.com/landing/editor/beta") return;
+  //   var data = event.data;
+  //   $softr_token = data.data;
+  //   jsonData.business_id = data.business_id;
+  //   jsonData.path = data.business_id;
+  //   $("[id^='_cta_btn_']").off("click");
+  //   makeEditable();
+  //   btnEditable();
+  //   $('body').addClass('editor-active');
+  //   $('.sidebar.left').css('display','flex');
+  // }
     
   // only in dev mode otherwise comment this
+  // $("[id^='_cta_btn_']").off("click");
   // btnEditable();
   // makeEditable();
   // $('body').addClass('editor-active');
-  // $("[id^='_cta_btn_']").off("click");
   // end of dev mode
   
   var interval = setInterval(function() {
