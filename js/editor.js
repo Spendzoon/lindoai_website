@@ -75,6 +75,7 @@ function btnEditable(){
 
 
 }
+
 $(document).click(function(event) {
   if (!$(event.target).closest("#_cta_btn_header_text, #_cta_btn_hero_text, #_cta_btn_banner_text, .edit-url-component").length) {
     $(".edit-url-component").hide();
@@ -227,22 +228,6 @@ function makeEditable(){
   // });  
 }
 
-window.addEventListener("message", receiveMessage, false);
-
-var $softr_token;
-
-function receiveMessage(event) {
-  // if (event.origin !== "https://app.lindoai.com/landing/editor/beta") return;
-  var data = event.data;
-  $softr_token = data.data;
-  jsonData.business_id = data.business_id;
-  jsonData.path = data.business_id;
-  makeEditable();
-  btnEditable();
-  $('body').addClass('editor-active');
-  $('.sidebar.left').css('display','flex');
-  $("[id^='_cta_btn_']").off("click");
-}
 
 //
 
@@ -343,9 +328,27 @@ $("#input_image_feature_3").change(function() {
 //
 
 $(document).ready(function() {
+
+  window.addEventListener("message", receiveMessage, false);
+
+  var $softr_token;
+  
+  function receiveMessage(event) {
+    // if (event.origin !== "https://app.lindoai.com/landing/editor/beta") return;
+    var data = event.data;
+    $softr_token = data.data;
+    jsonData.business_id = data.business_id;
+    jsonData.path = data.business_id;
+    makeEditable();
+    btnEditable();
+    $('body').addClass('editor-active');
+    $('.sidebar.left').css('display','flex');
+    $("[id^='_cta_btn_']").off("click");
+  }
+    
   // only in dev mode otherwise comment this
-  // makeEditable();
   // btnEditable();
+  // makeEditable();
   // $('body').addClass('editor-active');
   // $("[id^='_cta_btn_']").off("click");
   // end of dev mode
