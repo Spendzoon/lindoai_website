@@ -3,9 +3,9 @@
   $("body").append('<script src="https://kit.fontawesome.com/2ac67565a3.js" crossorigin="anonymous"></script>');
   $("body").append('<script src="js/jquery.sidebar.min.js"></script>');
   $("body").append('<script src="js/editor.js"></script>  ');
-$.getJSON("/js/config.json", function(data) {
-  var tier = data.tier;
-  if (tier === "premium") {
-    $(".lindo-badge").hide();
-  }
-});
+// $.getJSON("/js/config.json", function(data) {
+//   var tier = data.tier;
+//   if (tier === "premium") {
+//     $(".lindo-badge").hide();
+//   }
+// });
