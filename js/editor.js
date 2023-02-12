@@ -1,6 +1,38 @@
-  $(function(){
-    $("#editor-placeholder").load("blocks/editor.html"); 
-  });
+
+var editorHTML = '\
+  <div id="editor-html">\
+    <!-- SIDEBAR SETTINGS -->\
+    <div class="sidebar left" style="display: none;">\
+        <!-- HEADER -->\
+        <div class="sidebar-header">\
+            <div class="title">\
+            <h3>Page settings</h3>\
+            </div>\
+            <div class="action">\
+            <span class="close-sidebar" href=""><i class="fa-solid fa-xmark"></i></span>\
+            </div>\
+        </div>\
+        <!-- ITEM -->\
+        <div class="input-label">\
+            <h4>Page Name</h4>\
+            <input id="_page_name_input" type="text" placeholder="E.g. Hubspot | Tools for your business " value="Lindo | Marketing Ai Assitant">\
+        </div>\
+        <!-- ITEM -->\
+        <div class="input-label">\
+            <h4>Page URL</h4>\
+            <input id="_page_url_input" type="text" placeholder="E.g. /trynow" value="/trynow">\
+        </div>\
+    </div>  \
+    <!-- EDITOR PANEL -->\
+    <div id="editor-panel" class="editor-panel">\
+        <div class="editor-settings">\
+            <span class="action open-settings"><i class="fa-solid fa-gear"></i></span>\
+        </div>\
+        <div class="editor-actions">\
+            <button id="save_changes" class="save_changes">Publish</button>\
+        </div>\
+    </div>  \
+  </div>';
 
   var jsonData = {
     "business_id": "",
@@ -339,6 +371,11 @@ $(document).ready(function() {
     $softr_token = data.data;
     jsonData.business_id = data.business_id;
     jsonData.path = data.business_id;
+
+    $(function(){
+      $("#editor-placeholder").append(editorHTML); 
+    });
+
     $("[id^='_cta_btn_']").off("click");
     makeEditable();
     btnEditable();
@@ -347,10 +384,14 @@ $(document).ready(function() {
   }
     
   // only in dev mode otherwise comment this
+  // $(function(){
+  //   $("#editor-placeholder").append(editorHTML); 
+  // });
   // $("[id^='_cta_btn_']").off("click");
   // btnEditable();
   // makeEditable();
   // $('body').addClass('editor-active');
+  
   // end of dev mode
   
   var interval = setInterval(function() {
